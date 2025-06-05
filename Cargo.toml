@@ -1,0 +1,33 @@
+[package]
+name = "weather-lib-rs"
+version = "0.0.0"
+edition = "2021"
+authors = ["leidson <leidson@planetagol.com.br>"]
+
+[dependencies]
+open-meteo-api = "0.1.4"
+
+#
+# From open-meteo-rs (autoinherit is a new feature, so I won't use it for now)
+#
+chrono = { version = "0.4.24", features = ["serde"]}
+chrono-tz = "0.8.2"
+#chrono-tz= "0.10.1"
+reqwest = { version = "0.11.14", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.91"
+snafu = "0.7.4"
+tokio = { version = "1.24.2", features = ["full"] }
+
+# executable
+#[[bin]]
+#name = "weather-rust"
+#path = "src/rust/weather.rs"
+
+# library (static or dynamic)
+[lib]
+name = "weatherrs"
+crate-type = ["cdylib"]      # Creates dynamic lib
+#crate-type = ["staticlib"] # Creates static lib
+path = "src/rust/weather.rs"
+
