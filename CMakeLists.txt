@@ -27,6 +27,7 @@ include(GNUInstallDirs)
 include(FetchContent)
 include(ExternalProject)
 include(FindCURL)
+include(CTest)
 
 option(WEATHER_LIB_IS_STATIC "Build weather library as static" OFF)
 
