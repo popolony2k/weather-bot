@@ -23,6 +23,8 @@ project (weather_bot_tests)
 
 include(FetchContent)
 include(ExternalProject)
+include(CTest)
+include(GoogleTest)
 
 #
 # Setup CLang to C++17 (minimum for gtest)
@@ -84,6 +86,8 @@ target_link_libraries(weather_bot_tests ${BINARY_DIR}/lib/libgtest_main.a)
 # Just make the test runnable with
 #   $ make test
 
-enable_testing()
+#enable_testing()
+gtest_discover_tests(weather_bot_tests)
+
 add_test(NAME    weather_bot_tests 
          COMMAND weather_bot_tests)
