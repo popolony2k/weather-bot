@@ -151,6 +151,3 @@ add_dependencies(weather_bot telebot)
 
 add_subdirectory(test)
 
-enable_testing ()
-add_test (NAME weather_bot_test_step COMMAND weather_bot_tests)
-
